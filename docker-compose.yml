@@ -1,0 +1,23 @@
+version: "1"
+
+services:
+  minecraft:
+    image: itzg/minecraft-server
+    volumes:
+      - minecraftdata:/data
+      - ./Minecraft/plugins:/plugins
+      - ./Minecraft/mods:/mods
+    ports:
+      - 25565:25565
+    environment:
+      EULA: "TRUE"
+      TYPE: "SPIGOT"
+      OPS: "Hydrowelder"
+      ENABLE_WHITELIST: "TRUE"
+      ENFORCE_WHITELIST: "TRUE"
+    tty: TRUE
+    stdin_open: TRUE
+    restart: unless-stopped
+volumes:
+  minecraftdata:
+    external: TRUE
