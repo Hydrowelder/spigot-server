@@ -1,0 +1,1 @@
+docker exec -i spigot-server-minecraft-1 rcon-cli
